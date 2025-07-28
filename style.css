@@ -1,0 +1,323 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#topp {
+    position: fixed;
+    bottom: 60px;
+    right: 40px;
+}
+
+#topp a {
+    background-color: #bba680;
+    border: 2px solid #e8decb;
+    border-radius: 26px;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+#topp a:hover {
+    background-color: white;
+    border: 2px solid #bba680;
+    border-radius: 26px;
+    color: #bba680;
+    text-decoration: none;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url("image/22-plantes-exotiques-d-exterieur-resistant-au-froid-8.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+#white {
+    margin-top: 230px;
+    background-color: #e8decb;
+    width: 55%;
+    padding-right: 40px;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-family: serif;
+    font-size: 3em;
+    color: white;
+    margin-left: 80px;
+    text-align: left;
+}
+
+#intro {
+    width: 85%;
+}
+
+#intro p {
+    font-family: serif;
+    text-align: left;
+    color: white;
+    margin-left: 80px;
+    font-size: 1.5em;
+}
+
+#bande {
+    height: 60px;
+    margin-bottom: 60px;
+    background-color: #e8decb;
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map {
+    margin: 30px;
+    overflow: hidden;
+}
+
+.map__image {
+    width: 70%;
+    float: left;
+}
+
+.map__image svg {
+    height: 600px;
+    margin: 50px;
+}
+
+.map__image path {
+    fill: #e8decb;
+    transition: fill 0.3s;
+}
+
+.map__image .is-active path {
+    fill: #bba680;
+    cursor: pointer;
+}
+
+.map__list {
+    margin-bottom: 20px;
+    float: right;
+    width: 30%;
+}
+
+.map__list p {
+    margin-left: 40px;
+    font-weight: bold;
+    color: #bba680;
+}
+
+li {
+    list-style-type: none;
+}
+
+.map__list span {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.map__list span:hover {
+    color: #bba680;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.map__list span.is-active {
+    color: #bba680;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+select {
+    margin: 0 30px;
+    padding: 10px 15px;
+    font-size: 1.1em;
+    border: 2px solid #ddd;
+    border-radius: 16px;
+    background-color: #fff;
+    color: #333;
+    appearance: none;
+    cursor: pointer;
+    width: auto;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+select:hover {
+    border-color: #e8decb;
+    background-color: #f8f9fa;
+}
+
+select:focus {
+    border-color: #bba680;
+    background-color: #fdfdfd;
+    outline: none;
+}
+
+nav label {
+    margin: 30px;
+    font-size: 1em;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #bba680;
+    padding-top: 5px;
+    align-content: center;
+}
+
+nav {
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select::after {
+    content: '▼';
+    font-size: 1.2em;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+#gallerie {
+    width: 93%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+#gallerie .im {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+    transition: transform 0.4s ease;
+}
+
+#gallerie .fleur {
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    height: 300px;
+    position: relative;
+    transition: transform 0.4s ease;
+}
+
+#gallerie .fleur:hover img {
+    transform: scale(1.2);
+}
+
+#gallerie .im p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#gallerie .fleur img {
+    border-radius: 8px;
+    width: 100%;
+    height: 200%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+#gallerie .fleur::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.4s ease;
+    z-index: 1;
+    border-radius: 8px;
+}
+
+#gallerie .fleur:hover::before {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.description-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    pointer-events: none;
+}
+
+.fleur:hover .description-overlay {
+    opacity: 1;
+}
+
+footer p {
+    margin: 0;
+    background-color: #e8decb;
+    color: #bba680;
+    padding: 20px;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    #gallerie {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #gallerie {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    #gallerie {
+        grid-template-columns: 1fr;
+    }
+}
