@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     let selectedHabitat = '';
     let selectedUtilisation = '';
 
@@ -28,6 +29,7 @@ $(document).ready(function () {
                         `);
                     });
                 } else {
+                   
                     gallery.append('<p class="no-results">Aucun résultat trouvé.</p>');
                 }
             },
@@ -37,12 +39,15 @@ $(document).ready(function () {
         });
     }
 
+    
     $('.map__list span').on('click', function () {
-        const habitatId = $(this).attr('id').replace('list-', '');
+        const habitatId = $(this).attr('id').replace('list-', ''); 
 
+        
         if (habitatId === 'tout') {
-            selectedHabitat = '';
+            selectedHabitat = ''; 
         } else {
+            
             const habitatMapping = {
                 trop: 'Régions tropicales et subtropicales d’Asie',
                 am: 'Amérique centrale et du Sud',
@@ -51,16 +56,18 @@ $(document).ready(function () {
                 mada: 'Madagascar et Afrique de l’Est',
                 indo: 'Sumatra, Indonésie'
             };
-            selectedHabitat = habitatMapping[habitatId];
+            selectedHabitat = habitatMapping[habitatId]; 
         }
 
         console.log('Habitat sélectionné via la carte :', selectedHabitat);
         loadFleurs(selectedHabitat, selectedUtilisation);
     });
 
+    
     $('.map__image a').on('click', function () {
-        const habitatId = this.id.replace('region-', '');
+        const habitatId = this.id.replace('region-', ''); 
 
+        
         const habitatMapping = {
             temp: 'Régions tempérées et subtropicales',
             trop: 'Régions tropicales et subtropicales d’Asie',
@@ -70,39 +77,47 @@ $(document).ready(function () {
             indo: 'Sumatra, Indonésie'
         };
 
+        
         selectedHabitat = habitatMapping[habitatId] || '';
 
         console.log('Habitat sélectionné via la carte SVG :', selectedHabitat);
         loadFleurs(selectedHabitat, selectedUtilisation);
     });
 
+   
     $('.map__list span').on('mouseenter', function () {
-        const habitatId = $(this).attr('id').replace('list-', '');
+        const habitatId = $(this).attr('id').replace('list-', ''); 
 
         if (habitatId === 'tout') {
+            
             $('.map__image path').addClass('is-active');
         } else {
+            
             const activeArea = function (id) {
-                $('.map__image path').removeClass('is-active');
+                $('.map__image path').removeClass('is-active'); 
                 $(`.map__image #region-${id}`).addClass('is-active');
             };
             activeArea(habitatId);
         }
     });
 
+   
     $('.map__list span').on('mouseleave', function () {
         const habitatId = $(this).attr('id').replace('list-', '');
 
+        
         if (habitatId === 'tout') {
-            $('.map__image path').removeClass('is-active');
+            $('.map__image path').removeClass('is-active'); 
         }
     });
 
+    
     $('#use-select').on('change', function () {
         selectedUtilisation = $('#use-select').val();
         console.log('Utilisation sélectionnée :', selectedUtilisation);
         loadFleurs(selectedHabitat, selectedUtilisation);
     });
 
+    
     loadFleurs();
 });
